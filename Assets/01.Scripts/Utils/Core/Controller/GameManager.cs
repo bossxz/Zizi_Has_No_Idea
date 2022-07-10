@@ -34,7 +34,14 @@ public class GameManager : MonoSingleton<GameManager>
     public bool editorMode = false;
     public int stage;
 
-    private void Awake()
+    #region Debug Options
+
+    [SerializeField, Tooltip("Not Start with Stage")] private bool IsDontStageLoad = false;
+
+	#endregion
+
+
+	private void Awake()
     {
         UIManager = FindObjectOfType<UIManager>();
         Data = FindObjectOfType<DataManager>();
@@ -94,7 +101,10 @@ public class GameManager : MonoSingleton<GameManager>
 
         if (Data.IsValidStage(CurrentChapter, CurrentStage))
         {
-            StartCoroutine(LoadStage(delay));
+            if (!IsDontStageLoad)
+			{
+                StartCoroutine(LoadStage(delay));
+			}
         }
         else
         {

@@ -7,27 +7,23 @@ using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
-
-    [SerializeField] private Text stageText;
-
-    [Header("Character Chart")]
-    [SerializeField] private RectTransform chartImage;
-    [SerializeField] private SentencePanel sentencePanelPrefab;
-    private List<SentencePanel> sentencePanels = new List<SentencePanel>();
-
-    [SerializeField] private Image unitScroll;
-
-    [Header("ETC UI")]
-    [SerializeField] private InfoImage verbInfoImage;
-
-    [Header("CanvasGroup")]
-    [SerializeField] private CanvasGroup lobbyCanvas;
-    [SerializeField] private CanvasGroup gameCanvas;
-    [SerializeField] private CanvasGroup settingCanvas;
-    [SerializeField] private CanvasGroup endCanvas;
+    private Text stageText => uiCanvas.StageText;
+    private RectTransform chartImage => uiCanvas.ChartImage;
+    private SentencePanel sentencePanelPrefab => uiCanvas.SentencePanelPrefab;
+    private List<SentencePanel> sentencePanels => uiCanvas.SentencePanels;
+    private Image unitScroll => uiCanvas.UnitScroll;
+    private InfoImage verbInfoImage => uiCanvas.VerbInfoImage;
+    private CanvasGroup lobbyCanvas => uiCanvas.LobbyCanvas;
+    private CanvasGroup gameCanvas => uiCanvas.GameCanvas;
+    private CanvasGroup settingCanvas => uiCanvas.SettingCanvas;
+    private CanvasGroup endCanvas => uiCanvas.EndCanvas;
+    private UICanvas uiCanvas;
 
     void Awake()
     {
+        uiCanvas = FindObjectOfType<UICanvas>();
+
+
         Debug.Log("UI Manager Start");
         EventManager<EventParam>.StartListening(Constant.CLICK_PLAYER_EVENT, ActiveChartImage);
         EventManager.StartListening(Constant.START_PLAY_EVENT, InactiveCharImage);
