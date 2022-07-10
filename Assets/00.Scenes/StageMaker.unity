@@ -19773,6 +19773,7 @@ GameObject:
   - component: {fileID: 856998498}
   - component: {fileID: 856998497}
   - component: {fileID: 856998499}
+  - component: {fileID: 856998500}
   m_Layer: 0
   m_Name: StageMakerManager
   m_TagString: Untagged
@@ -19820,6 +19821,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorInHierarchy: {r: 0.75849056, g: 0.83709955, b: 1, a: 1}
+--- !u!114 &856998500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856998496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ea392589434a24bbf33ffdb4189ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sizeSlider: {fileID: 4284142536895953365}
+  stage: {fileID: 6042454138984824982}
 --- !u!1 &867538911
 GameObject:
   m_ObjectHideFlags: 0
@@ -20500,6 +20515,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 25327146112862283, guid: 1725424cfca9079418b96e85ee544488, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227681222447045390, guid: 1725424cfca9079418b96e85ee544488, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4449751346298154852, guid: 1725424cfca9079418b96e85ee544488, type: 3}
       propertyPath: m_Name
       value: StageMake UI Canvas
@@ -20670,6 +20693,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1725424cfca9079418b96e85ee544488, type: 3}
+--- !u!114 &4284142536895953365 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7517291410375491991, guid: 1725424cfca9079418b96e85ee544488, type: 3}
+  m_PrefabInstance: {fileID: 4284142536895953364}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6042454138984824981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20727,3 +20761,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e57e680c2ff3ebc49b961f6e55b35e36, type: 3}
+--- !u!4 &6042454138984824982 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2431000450625316007, guid: e57e680c2ff3ebc49b961f6e55b35e36, type: 3}
+  m_PrefabInstance: {fileID: 6042454138984824981}
+  m_PrefabAsset: {fileID: 0}

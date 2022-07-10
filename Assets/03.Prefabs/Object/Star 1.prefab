@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: c5435003f446ee3419f2abb2fc5bbbb4, type: 3}
-  audioType: 1
 --- !u!1001 &6328521312388298301
 PrefabInstance:
   m_ObjectHideFlags: 0

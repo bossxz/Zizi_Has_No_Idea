@@ -74,7 +74,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 7d62dff4de348414d8cea46964a934ff
-    m_Address: Assets/07.Sounds/Landing.mp3
+    m_Address: landingSound
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
