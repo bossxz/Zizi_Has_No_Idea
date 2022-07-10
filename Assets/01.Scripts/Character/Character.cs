@@ -14,13 +14,14 @@ public class Character : MonoBehaviour
 
     public string characterName;
 
-    [SerializeField] private GameObject pointObject;
+    static private GameObject pointObject = null;
     private GameObject point;
 
     [SerializeField] private UnityEvent onSelected;
 
     private void Awake()
     {
+        pointObject ??= AddressablesManager.Instance.GetResource<GameObject>("pointObject");
         EventManager.StartListening(Constant.CLEAR_STAGE_EVENT, RegisterCharacter);
         EventManager<EventParam>.StartListening(Constant.CLICK_PLAYER_EVENT, OnSelect);
     }
