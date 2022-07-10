@@ -13,7 +13,7 @@ public class SoundManager : MonoSingleton<SoundManager>
 
     private void Awake()
     {
-        if(isSetting)
+        if(!isSetting)
 		{
             GetEffectAudioClips();
 		}
