@@ -37,7 +37,7 @@ public class TitleScene : MonoBehaviour
 
     private void OnEnterIcon()
     {
-        SoundManager.Instance.PlayOneShotAudio(AudioType.EffectSound, enterClip);
+        SoundManager.Instance.PlayEffectOneShotAudio(AudioType.buttonDragSound);
 
         foreach (Image image in fadedImages)
         {

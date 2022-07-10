@@ -4,28 +4,23 @@ using UnityEngine;
 
 public class CharacterSound : MonoBehaviour
 {
-    [SerializeField] private AudioClip walkSound;
-    [SerializeField] private AudioClip selectSound;
-    [SerializeField] private AudioClip fallSound;
-    [SerializeField] private AudioClip landingSound;
-
     public void PlayWalkSound()
     {
-        SoundManager.Instance.PlayOneShotAudio(AudioType.EffectSound, walkSound);
+        SoundManager.Instance.PlayEffectOneShotAudio(AudioType.walkSound);
     }
 
     public void PlaySelectSound()
     {
-        SoundManager.Instance.PlayOneShotAudio(AudioType.EffectSound, selectSound);
+        SoundManager.Instance.PlayEffectOneShotAudio(AudioType.selectSound);
     }
 
     public void PlayFallSound()
     {
-        SoundManager.Instance.PlayOneShotAudio(AudioType.EffectSound, fallSound);
+        SoundManager.Instance.PlayEffectOneShotAudio(AudioType.failSound);
     }
 
     public void PlayLandingSound()
     {
-        SoundManager.Instance.PlayOneShotAudio(AudioType.EffectSound, landingSound);
+        SoundManager.Instance.PlayEffectOneShotAudio(AudioType.landingSound);
     }
 }

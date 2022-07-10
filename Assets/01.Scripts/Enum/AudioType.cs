@@ -1,5 +1,18 @@
 public enum AudioType
 {
-    BGM,
-    EffectSound
+    mainBGM = 0,
+    walkSound,
+    starSound,
+    selectSound,
+    selectZZSound,
+    portalSound,
+    playSound,
+    landingSound,
+    fireworkSound,
+    failSound,
+    explosionSound,
+    destroySound,
+    clearSound,
+    buttonDragSound,
+    Count,
 }

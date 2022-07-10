@@ -5,13 +5,6 @@ using UnityEngine.EventSystems;
 
 public class PlayUISound : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [SerializeField] private AudioClip downClip;
-    [SerializeField] private AudioClip upClip;
-    [SerializeField] private AudioClip enterClip;
-    [SerializeField] private AudioClip exitClip;
-    [SerializeField] private AudioClip selectClip;
-    [SerializeField] private AudioClip beginDragClip;
-
     [SerializeField] private bool isAutoDown = true;
     [SerializeField] private bool isAutoUp = true;
     [SerializeField] private bool isAutoEnter = true;
@@ -21,38 +14,32 @@ public class PlayUISound : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void PlayDownClip()
     {
-        if (downClip == null || SoundManager.Instance == null) return;
-        SoundManager.Instance.PlayOneShotAudio(AudioType.EffectSound, downClip);
+        SoundManager.Instance.PlayEffectOneShotAudio(AudioType.playSound);
     }
 
     public void PlayUpClip()
     {
-        if (upClip == null || SoundManager.Instance == null) return;
-        SoundManager.Instance.PlayOneShotAudio(AudioType.EffectSound, upClip);
+        //SoundManager.Instance.PlayOneShotAudio(AudioType.EffectSound, upClip);
     }
 
     public void PlayEnterClip()
     {
-        if (enterClip == null || SoundManager.Instance == null) return;
-        SoundManager.Instance.PlayOneShotAudio(AudioType.EffectSound, enterClip);
+        //SoundManager.Instance.PlayOneShotAudio(AudioType.EffectSound, enterClip);
     }
 
     public void PlayExitClip()
     {
-        if (exitClip == null || SoundManager.Instance == null) return;
-        SoundManager.Instance.PlayOneShotAudio(AudioType.EffectSound, exitClip);
+        //SoundManager.Instance.PlayOneShotAudio(AudioType.EffectSound, exitClip);
     }
 
     public void PlaySelectClip()
     {
-        if (selectClip == null || SoundManager.Instance == null) return;
-        SoundManager.Instance.PlayOneShotAudio(AudioType.EffectSound, selectClip);
+        SoundManager.Instance.PlayEffectOneShotAudio(AudioType.selectSound);
     }
 
     public void PlayBeginDragClip()
     {
-        if (beginDragClip == null || SoundManager.Instance == null) return;
-        SoundManager.Instance.PlayOneShotAudio(AudioType.EffectSound, beginDragClip);
+        SoundManager.Instance.PlayEffectOneShotAudio(AudioType.buttonDragSound);
     }
 
 

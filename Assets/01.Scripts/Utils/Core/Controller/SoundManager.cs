@@ -6,39 +6,89 @@ public class SoundManager : MonoSingleton<SoundManager>
 {
     [SerializeField] private AudioSource bgmAudio;
     [SerializeField] private AudioSource effectAudio;
-
-    private Dictionary<AudioType, AudioSource> audioSources = new Dictionary<AudioType, AudioSource>();
-
-    private AudioClip fireWorkClip;
+    static private Dictionary<AudioType, AudioClip> audioClipList = new Dictionary<AudioType, AudioClip>(); //사운드 클립 딕셔너리
+    static bool isSetting = false; //오디오 클립이 세팅되었는지 여부
 
     private WaitForSeconds delay01 = new WaitForSeconds(1f);
 
     private void Awake()
     {
-        audioSources.Add(AudioType.BGM, bgmAudio);
-        audioSources.Add(AudioType.EffectSound, effectAudio);
-
-        fireWorkClip = Resources.Load<AudioClip>("Firework");
+        if(isSetting)
+		{
+            GetEffectAudioClips();
+		}
     }
 
-    public void PlayAudio(AudioType audioType, AudioClip audioClip)
+    /// <summary>
+    /// 효과음들 가져오기
+    /// </summary>
+    private void GetEffectAudioClips()
+	{
+        var count = (int)AudioType.Count;
+        for (int i = 0; i < count; ++i)
+		{
+            var address = System.Enum.GetName(typeof(AudioType), i);
+            audioClipList.Add((AudioType)i, AddressablesManager.Instance.GetResource<AudioClip>(address));
+        }
+        isSetting = true;
+
+    }
+
+    /// <summary>
+    /// 효과음 출력
+    /// </summary>
+    /// <param name="audioType"></param>
+    public void PlayEffectAudio(AudioType audioType)
     {
-        if(audioSources.ContainsKey(audioType))
+        if(audioClipList.ContainsKey(audioType))
         {
-            audioSources[audioType].Stop();
-            audioSources[audioType].clip = audioClip;
-            audioSources[audioType].Play();
+            effectAudio.Stop();
+            effectAudio.clip = audioClipList[audioType];
+            effectAudio.Play();
         }
     }
 
-    public void PlayOneShotAudio(AudioType audioType, AudioClip audioClip)
+    /// <summary>
+    /// 브금 출력
+    /// </summary>
+    /// <param name="audioType"></param>
+    public void PlayBGMAudio(AudioType audioType)
     {
-        if (audioSources.ContainsKey(audioType))
+        if (audioClipList.ContainsKey(audioType))
         {
-            audioSources[audioType].PlayOneShot(audioClip);
+            bgmAudio.Stop();
+            bgmAudio.clip = audioClipList[audioType];
+            bgmAudio.Play();
         }
     }
 
+    /// <summary>
+    /// 이펙트 원샷 사운드 
+    /// </summary>
+    /// <param name="audioType"></param>
+    public void PlayEffectOneShotAudio(AudioType audioType)
+    {
+        if (audioClipList.ContainsKey(audioType))
+        {
+            effectAudio.PlayOneShot(audioClipList[audioType]);
+        }
+    }
+
+    /// <summary>
+    /// 브금 원샷 사운드
+    /// </summary>
+    /// <param name="audioType"></param>
+    public void PlayBGMOneShotAudio(AudioType audioType)
+    {
+        if (audioClipList.ContainsKey(audioType))
+        {
+            bgmAudio.PlayOneShot(audioClipList[audioType]);
+        }
+    }
+
+    /// <summary>
+    /// 스테이지 클리어 사운드 출력
+    /// </summary>
     public void PlayClearSound()
     {
         StartCoroutine(FireworkCoroutine());
@@ -46,10 +96,10 @@ public class SoundManager : MonoSingleton<SoundManager>
 
     private IEnumerator FireworkCoroutine()
     {
-        PlayOneShotAudio(AudioType.EffectSound, fireWorkClip);
+        PlayEffectOneShotAudio(AudioType.fireworkSound);
         yield return delay01;
-        PlayOneShotAudio(AudioType.EffectSound, fireWorkClip);
+        PlayEffectOneShotAudio(AudioType.fireworkSound);
         yield return delay01;
-        PlayOneShotAudio(AudioType.EffectSound, fireWorkClip);
+        PlayEffectOneShotAudio(AudioType.fireworkSound);
     }
 }

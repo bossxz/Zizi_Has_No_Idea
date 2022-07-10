@@ -30,7 +30,7 @@ public class Destroy : SettingDirection
 
         if (renderer)
         {
-            SoundManager.Instance.PlayOneShotAudio(AudioType.EffectSound, destroyClip);
+            SoundManager.Instance.PlayEffectOneShotAudio(AudioType.destroySound);
             destroyEffect = PoolManager.Pop(DESTROY_EFFECT);
             destroyEffect.transform.position = collision.contacts[0].point;
 

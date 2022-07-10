@@ -21,6 +21,62 @@ MonoBehaviour:
     m_Address: pointObject
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 8cc17a00278666148aa69131254c58e0
+    m_Address: mainBGM
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cceccc12496d2aa41b33a9d05e6b6e51
+    m_Address: walkSound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c5435003f446ee3419f2abb2fc5bbbb4
+    m_Address: starSound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 322eea8b8b127a84e99d75ff04a81ad3
+    m_Address: buttonDragSound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 17024dfb02c865b4f91779e37e0b2ce0
+    m_Address: failSound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7102fdec206ddf247be71458baee72a0
+    m_Address: playSound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 46b17561001fdce43946e781222e8a98
+    m_Address: selectSound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6cf9016a11b820046aff97731fccd997
+    m_Address: selectZZSound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ead704b61736bfe4b879fc6c10328818
+    m_Address: clearSound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2e2f420618ed09e4598f614f153d459a
+    m_Address: destroySound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f2a770a403a79454b9ffad52a48eef1a
+    m_Address: explosionSound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 63951791d306c794aa7399ebe63ad4a0
+    m_Address: fireworkSound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0a2df6a515011884dba2e6fc9117743e
+    m_Address: portalSound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7d62dff4de348414d8cea46964a934ff
+    m_Address: Assets/07.Sounds/Landing.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 414e99bef4499ff4884b2a8aef761c46, type: 2}
   m_SchemaSet:

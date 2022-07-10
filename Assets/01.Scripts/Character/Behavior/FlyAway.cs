@@ -32,7 +32,7 @@ public class FlyAway : SettingDirection
     {
         isStopMovement = true;
         rigid = gameObject.GetComponent<Rigidbody>();
-        onExplosion += () => SoundManager.Instance.PlayOneShotAudio(AudioType.EffectSound, explosionClip);
+        onExplosion += () => SoundManager.Instance.PlayEffectOneShotAudio(AudioType.explosionSound);
 
         StartCoroutine(BehaviourCoroutine());
     }

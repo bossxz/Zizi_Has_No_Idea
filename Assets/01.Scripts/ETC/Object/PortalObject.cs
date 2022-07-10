@@ -42,6 +42,6 @@ public class PortalObject : MonoBehaviour
 
         other.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
-        SoundManager.Instance.PlayOneShotAudio(AudioType.EffectSound, portalClip);
+        SoundManager.Instance.PlayEffectOneShotAudio(AudioType.portalSound);
     }
 }
